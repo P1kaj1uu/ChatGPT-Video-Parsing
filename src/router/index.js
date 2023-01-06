@@ -1,0 +1,67 @@
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+// 加载loding效果
+import NProgress from "nprogress"
+import "nprogress/nprogress.css"
+NProgress.configure({ showSpinner: false })
+// 导入封装的判断是否为移动端设备的函数
+import { isMobile } from '@/utils/mobileORpc'
+
+Vue.use(VueRouter)
+
+const routes = [
+  {
+    path: '/',
+    redirect: '/home'
+  },
+  {
+    path: '/home',
+    name: 'home',
+    redirect: '/home/welcome',
+    component: () => import(/* webpackChunkName: "home" */ '../views/HomeView.vue'),
+    children: [
+      {
+        path: 'welcome',
+        name: 'welcome',
+        component: () => import(/* webpackChunkName: "welcome" */ '../views/WelcomeView.vue')
+      },
+      {
+        path: 'video',
+        name: 'video',
+        component: () => import(/* webpackChunkName: "video" */ '../views/VideoView.vue')
+      },
+      {
+        path: 'help',
+        name: 'help',
+        component: () => import(/* webpackChunkName: "help" */ '../views/HelpView.vue')
+      },
+      {
+        path: 'about',
+        name: 'about',
+        component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+      }
+    ]
+  },
+]
+
+const router = new VueRouter({
+  routes
+})
+
+// 路由前置全局守卫（在路由发生真正跳转之前，会执行该函数）
+router.beforeEach((to, from, next) => {
+  // 如果是移动端访问，阻止继续访问
+  if (isMobile()) {
+    alert('检测到当前设备为移动端，因暂未做移动端适配，将无法继续访问，请用电脑（推荐谷歌浏览器）访问！谢谢！')
+    return
+  } else {
+    NProgress.start()
+    next()
+  }
+})
+
+router.afterEach(() => {
+  NProgress.done()
+})
+
+export default router

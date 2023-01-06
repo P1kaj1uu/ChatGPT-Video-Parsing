@@ -1,0 +1,19 @@
+/* 全局样式表 */
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-width: 1366px;
+}
+
+.el-breadcrumb {
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+
+.el-card {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, .15)!important;
+  margin-bottom: 20px;
+}
