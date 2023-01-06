@@ -1,19 +1,9 @@
-# vip-video-parsing
+# VIP视频在线解析
 
-## Project setup
-```
-npm install
-```
+### v1.0版本已完成（2023.1.7）
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### 声明：本站只提供影视解析服务，请勿用于任何商业用途。如有侵权，请联系我！
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### 该项目是实习期间摸鱼时，不想再续费视频会员，于是自己一人独立开发尝试做了这个网站。
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 除了可以解析VIP视频外，其中还包含一加载进入网站的爱心跳动效果。
