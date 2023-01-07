@@ -32,7 +32,7 @@
 			<div class="layui-row">
 				<div class="layui-col-md3">
 					<div class="layui-card">
-						<div class="layui-card-header">爱奇艺</div>
+						<div class="layui-card-header">爱奇艺（可用-超推荐）</div>
 						<div class="layui-card-body">
 							<a href="http://www.iqiyi.com/" target="_blank">
 								<img src="@/assets/images/video/video2.png" title="爱奇艺" />
@@ -43,7 +43,7 @@
 
 				<div class="layui-col-md3">
 					<div class="layui-card">
-						<div class="layui-card-header">优酷</div>
+						<div class="layui-card-header">优酷（可用-超推荐）</div>
 						<div class="layui-card-body">
 							<a href="http://www.youku.com/" target="_blank">
 								<img src="@/assets/images/video/video3.png" width="" height="50" title="优酷" />
@@ -54,7 +54,7 @@
 
 				<div class="layui-col-md3">
 					<div class="layui-card">
-						<div class="layui-card-header">腾讯视频</div>
+						<div class="layui-card-header">腾讯视频（可用-超推荐）</div>
 						<div class="layui-card-body">
 							<a href="http://v.qq.com/" target="_blank">
 								<img src="@/assets/images/video/video1.png" width="" height="50" title="腾讯视频" />
@@ -65,7 +65,7 @@
 
 				<div class="layui-col-md3">
 					<div class="layui-card">
-						<div class="layui-card-header">芒果TV</div>
+						<div class="layui-card-header">芒果TV（可用-超推荐）</div>
 						<div class="layui-card-body">
 							<a href="http://www.mgtv.com/" target="_blank">
 								<img src="@/assets/images/video/video4.png" height="" title="芒果TV" />
@@ -79,7 +79,7 @@
 			<div class="layui-row">
 				<div class="layui-col-md3">
 					<div class="layui-card">
-						<div class="layui-card-header">哔哩哔哩</div>
+						<div class="layui-card-header">哔哩哔哩（可能不得行）</div>
 						<div class="layui-card-body">
 							<a href="https://www.bilibili.com/" target="_blank">
 								<img src="@/assets/images/video/video10.png" class="OtherImg" height="50" title="哔哩哔哩" />
@@ -90,7 +90,7 @@
 
 				<div class="layui-col-md3">
 					<div class="layui-card">
-						<div class="layui-card-header">韩剧TV</div>
+						<div class="layui-card-header">韩剧TV（可能不得行）</div>
 						<div class="layui-card-body">
 							<a href="https://www.hjtv.me/" target="_blank">
 								<img src="@/assets/images/video/video11.png" class="OtherImg" height="50" title="韩剧TV" />
@@ -101,7 +101,7 @@
 
 				<div class="layui-col-md3">
 					<div class="layui-card">
-						<div class="layui-card-header">OmoFun</div>
+						<div class="layui-card-header">OmoFun（可能不得行）</div>
 						<div class="layui-card-body">
 							<a href="https://omofun.tv/" target="_blank">
 								<img src="@/assets/images/video/video12.png" class="OtherImg" height="50" title="OmoFun" />
