@@ -11,8 +11,8 @@ import { Heart } from '@/utils/model';
 export default {
   name: 'App',
   created () {
-    // 在不刷新页面的情况下，只执行一次爱心跳动效果
-    this.$nextTick(() => {
+    (function () {
+      // 在不刷新页面的情况下，只执行一次爱心跳动效果
       // 加载爱心跳动效果
       setTimeout(() => {
         let main = document.querySelector('.el-main')
@@ -47,9 +47,8 @@ export default {
             item.style.display = 'none'
           }
         })
-        this.flag = false
       }, 7500)
-    })
+    })();
     
     // 核心价值！
     (function () {
