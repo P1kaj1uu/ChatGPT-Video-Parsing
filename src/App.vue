@@ -14,7 +14,7 @@ export default {
     (function () {
       // 在不刷新页面的情况下，只执行一次爱心跳动效果
       // 加载爱心跳动效果
-      setTimeout(() => {
+      setTimeout(async () => {
         let main = document.querySelector('.el-main')
         console.log(
           main.clientWidth,
@@ -22,7 +22,7 @@ export default {
           main.getBoundingClientRect().left,
           main.getBoundingClientRect().top
         )
-        Heart()
+        await Heart()
         // 伪数组
         let ele = document.querySelectorAll('body canvas')
         Array.from(ele).forEach((item) => {
@@ -47,7 +47,7 @@ export default {
             item.style.display = 'none'
           }
         })
-      }, 7500)
+      }, 7800)
     })();
     
     // 核心价值！

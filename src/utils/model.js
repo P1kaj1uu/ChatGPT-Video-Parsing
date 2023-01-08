@@ -45,7 +45,7 @@ export const Heart = () => {
 
   // OBJ加载器
   new THREE.OBJLoader().load(
-    "https://assets.codepen.io/127738/heart_2.obj",
+    "model/heartBeat.obj",
     (obj) => {
       heart = obj.children[0];
       heart.geometry.rotateX(-Math.PI * 0.5);
@@ -64,6 +64,12 @@ export const Heart = () => {
       init();
       // 每一帧都会调用
       renderer.setAnimationLoop(render);
+    },
+    size => {
+      console.log(size)
+      console.log(size.loaded)
+      // if (size.loaded >= 790000) {
+      // }
     }
   );
 
