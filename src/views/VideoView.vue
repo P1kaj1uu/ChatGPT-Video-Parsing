@@ -79,7 +79,7 @@
 			<div class="layui-row">
 				<div class="layui-col-md3">
 					<div class="layui-card">
-						<div class="layui-card-header">哔哩哔哩（可能不得行）</div>
+						<div class="layui-card-header">哔哩哔哩（可用-超推荐）</div>
 						<div class="layui-card-body">
 							<a href="https://www.bilibili.com/" target="_blank">
 								<img src="@/assets/images/video/video10.png" class="OtherImg" height="50" title="哔哩哔哩" />

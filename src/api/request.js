@@ -11,38 +11,38 @@ export const getData = () => {
 			{
 				name: "万能接口（推荐可用）",
 				url: "http://www.sfsft.com/admin.php?url="
+      },
+      {
+				name: "万能接口备用（推荐可用）",
+				url: "https://jx.aidouer.net/?url="
+      },
+      {
+				name: "B站接口（推荐可用）",
+				url: "https://jx.jsonplayer.com/player/?url="
+      },
+      {
+				name: "B站备用接口（推荐可用）",
+				url: "https://okjx.cc/?url="
 			},
       {
-				name: "腾讯视频接口（推荐可用）",
-				url: "http://www.82190555.com/index/qqvod.php?url="
+				name: "纯净接口（推荐可用）",
+				url: "https://z1.m1907.top/?jx="
       },
       {
 				name: "优酷超清接口（推荐可用）",
 				url: "http://www.82190555.com/index/qqvod.php?url="
 			},
 			{
-				name: "优酷接口",
-				url: "http://api.baiyug.cn/vip/index.php?url="
-			},
-			{
-				name: "百域阁",
-				url: "http://api.baiyug.cn/vip/index.php?url="
-			},
-			{
+				name: "其它接口（推荐可用）",
+				url: "https://jx.dj6u.com/?url="
+      },
+      {
 				name: "爱奇艺",
-				url: "http://aikan-tv.com/?url="
-			},
-			{
-				name: "万能接口1",
-				url: "http://jqaaa.com/jx.php?url="
-			},
-			{
-				name: "万能接口2",
-				url: "http://y.mt2t.com/lines?url="
+				url: "https://jx.blbo.cc:4433/?url="
 			},
 			{
 				name: "万能接口3",
-				url: "http://jiexi.071811.cc/jx2.php?url="
+				url: "https://www.gai4.com/?url="
 			},
 			{
 				name: "万能接口4",
