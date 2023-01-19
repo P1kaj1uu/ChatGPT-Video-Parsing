@@ -1,11 +1,3 @@
-/*
- * @Description: 
- * @Author: wenshuang
- * @Date: 2023-01-04 10:14:09
- * @LastEditTime: 2023-01-06 17:46:33
- * @LastEditors: wenshuang
- * @Reference: 
- */
 const { defineConfig } = require('@vue/cli-service')
 // // 引入等比适配插件
 const px2rem = require("postcss-px2rem");
