@@ -6,6 +6,7 @@ import "nprogress/nprogress.css"
 NProgress.configure({ showSpinner: false })
 // 导入封装的判断是否为移动端设备的函数
 import { isMobile } from '@/utils/mobileORpc'
+import { myBrowser } from '@/utils/browserType'
 
 Vue.use(VueRouter)
 
@@ -55,8 +56,15 @@ router.beforeEach((to, from, next) => {
     alert('检测到当前设备为移动端，因暂未做移动端适配，将无法继续访问，请用电脑（推荐谷歌浏览器）访问！谢谢！')
     return
   } else {
-    NProgress.start()
-    next()
+    if (myBrowser() === 'Chrome') {
+      console.log(myBrowser())
+      NProgress.start()
+      next()
+    } else {
+      console.log(myBrowser())
+      alert('检测到当前浏览器不是谷歌内核浏览器，将无法继续访问，同时为保证解析视频功能正常使用，强烈推荐使用谷歌浏览器！请使用谷歌浏览器访问，谢谢理解与支持！')
+      return
+    }
   }
 })
 

@@ -9,11 +9,11 @@ export const getData = () => {
 	
 		var data = [
 			{
-				name: "万能接口（推荐可用）",
+				name: "万能接口（超推荐可用）",
 				url: "http://www.sfsft.com/admin.php?url="
       },
       {
-				name: "B站万能接口（推荐可用）",
+				name: "B站万能接口（超推荐可用）",
 				url: "https://jx.jsonplayer.com/player/?url="
       },
       {
