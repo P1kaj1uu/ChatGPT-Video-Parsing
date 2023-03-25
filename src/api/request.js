@@ -7,14 +7,14 @@ export const getData = () => {
 			upload = layui.upload,
 			layer = layui.layer;
 	
-		var data = [
+    var data = [
+      {
+				name: "B站万能接口（首推-超推荐可用）",
+				url: "https://jx.jsonplayer.com/player/?url="
+      },
 			{
 				name: "万能接口（超推荐可用）",
 				url: "http://www.sfsft.com/admin.php?url="
-      },
-      {
-				name: "B站万能接口（超推荐可用）",
-				url: "https://jx.jsonplayer.com/player/?url="
       },
       {
 				name: "B站备用接口（推荐可用）",

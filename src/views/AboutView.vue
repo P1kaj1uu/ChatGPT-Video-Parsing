@@ -17,7 +17,7 @@
           <div class="aboutMe">关于-声明</div>
           <h2>一、关于</h2>
           <ol>
-            <li>1&nbsp;.&nbsp;计算机科学与技术专业正在实习的大四学生</li>
+            <li>1&nbsp;.&nbsp;计算机科学与技术专业正在美团前端实习的大四学生</li>
             <li>2&nbsp;.&nbsp;个人博客：https://cnblogs.com/P1kaj1uu</li>
             <li>3&nbsp;.&nbsp;项目地址：https://github.com/P1kaj1uu/VIP-Video-Parsing</li>
             <li>
