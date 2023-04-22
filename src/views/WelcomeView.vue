@@ -122,6 +122,11 @@ export default {
     // 歌曲搜索
     searchMusic: function () {
       var that = this
+      if (that.query.trim().length === 0) {
+        that.$message('请先输入想听的歌曲或歌手')
+        that.query = ''
+        return
+      }
       axios.get('https://autumnfish.cn/search?keywords=' + this.query).then(
         function (response) {
           console.log(response)
