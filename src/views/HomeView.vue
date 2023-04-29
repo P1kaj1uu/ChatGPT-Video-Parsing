@@ -112,11 +112,12 @@ export default {
     }
   },
   created () {
+    console.info("%c欢迎您访问不见水星记的VIP视频在线解析网站，预祝使用愉快！", "font-family: 'Microsoft YaHei'; font-size: 24px; color: #00BFFF; text-shadow: 1px 1px #D3D3D3;");
     axios.get('https://ipapi.co/json/').then(res => {
       console.log(res.data)
-      const { region, city, ip } = res.data
+      const { ip } = res.data
       this.$message({
-        message: `欢迎您访问本网站，来自 ${region} 省 ${city} 的朋友！（当前访问IP地址：${ip}）`,
+        message: `欢迎您访问本网站！当前访问IP地址：${ip} `,
         type: 'success'
       })
     }).catch(error => {
