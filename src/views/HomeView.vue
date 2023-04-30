@@ -80,6 +80,9 @@
       <div class="dialogTxt">
         <div style="text-align: center">
           联系方式：<span style="font-weight: 600">Dveiklokk</span>（微信号）
+          <br />
+          <br />
+          备注：添加我好友时验证消息请注明来意，谢谢理解配合！
         </div>
         <div style="text-align: center">
           <img
