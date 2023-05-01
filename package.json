@@ -10,6 +10,7 @@
     "axios": "^1.3.6",
     "core-js": "^3.8.3",
     "element-ui": "^2.15.12",
+    "js-md5": "^0.7.3",
     "lib-flexible": "^0.3.2",
     "nprogress": "^0.2.0",
     "postcss-px2rem": "^0.3.0",

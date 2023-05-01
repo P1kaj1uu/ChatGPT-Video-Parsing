@@ -18,11 +18,11 @@ const routes = [
   {
     path: '/home',
     name: 'home',
-    redirect: '/home/welcome',
+    redirect: '/home/music',
     component: () => import(/* webpackChunkName: "home" */ '../views/HomeView.vue'),
     children: [
       {
-        path: 'welcome',
+        path: 'music',
         name: 'welcome',
         component: () => import(/* webpackChunkName: "welcome" */ '../views/WelcomeView.vue')
       },
@@ -30,6 +30,11 @@ const routes = [
         path: 'video',
         name: 'video',
         component: () => import(/* webpackChunkName: "video" */ '../views/VideoView.vue')
+      },
+      {
+        path: 'trans',
+        name: 'trans',
+        component: () => import(/* webpackChunkName: "video" */ '../views/TransView.vue')
       },
       {
         path: 'help',

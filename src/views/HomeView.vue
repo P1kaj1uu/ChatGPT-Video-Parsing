@@ -38,19 +38,23 @@
           active-text-color="#409eff"
           router
         >
-          <el-menu-item index="1" :index="'/home/welcome'">
-            <i class="el-icon-menu"></i>
-            <span slot="title">首页</span>
+          <el-menu-item index="1" :index="'/home/music'">
+            <i class="el-icon-headset"></i>
+            <span slot="title">音乐</span>
           </el-menu-item>
           <el-menu-item index="2" :index="'/home/video'">
             <i class="el-icon-video-camera-solid"></i>
             <span slot="title">观看</span>
           </el-menu-item>
-          <el-menu-item index="3" :index="'/home/help'">
+          <el-menu-item index="3" :index="'/home/trans'">
+            <i class="el-icon-reading"></i>
+            <span slot="title">降重</span>
+          </el-menu-item>
+          <el-menu-item index="4" :index="'/home/help'">
             <i class="el-icon-question"></i>
             <span slot="title">帮助</span>
           </el-menu-item>
-          <el-menu-item index="4" :index="'/home/about'">
+          <el-menu-item index="5" :index="'/home/about'">
             <i class="el-icon-user-solid"></i>
             <span slot="title">关于</span>
           </el-menu-item>
