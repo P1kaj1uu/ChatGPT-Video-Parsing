@@ -3,7 +3,7 @@
 ## 📄 免责声明
 ### 本项目提供音乐、影视解析和ChatGPT服务，仅供学习使用，请勿用于任何商业用途。如有侵权，请联系我！
 
-> License：
+> License：VIP-Video-Parsing is licensed under the Apache-2.0 License. See the [LICENSE](https://github.com/P1kaj1uu/VIP-Video-Parsing/blob/master/LICENSE) file for more information.
 
 > 项目描述详情信息可跳转WiKi：https://github.com/P1kaj1uu/VIP-Video-Parsing/wiki/%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3
 
