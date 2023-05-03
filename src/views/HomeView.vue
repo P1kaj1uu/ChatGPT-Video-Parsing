@@ -50,11 +50,15 @@
             <i class="el-icon-reading"></i>
             <span slot="title">降重</span>
           </el-menu-item>
-          <el-menu-item index="4" :index="'/home/help'">
+          <el-menu-item index="4" :index="'/home/chatgpt'">
+            <i class="el-icon-s-promotion"></i>
+            <span slot="title">GPT</span>
+          </el-menu-item>
+          <el-menu-item index="5" :index="'/home/help'">
             <i class="el-icon-question"></i>
             <span slot="title">帮助</span>
           </el-menu-item>
-          <el-menu-item index="5" :index="'/home/about'">
+          <el-menu-item index="6" :index="'/home/about'">
             <i class="el-icon-user-solid"></i>
             <span slot="title">关于</span>
           </el-menu-item>

@@ -37,6 +37,11 @@ const routes = [
         component: () => import(/* webpackChunkName: "video" */ '../views/TransView.vue')
       },
       {
+        path: 'chatgpt',
+        name: 'chatgpt',
+        component: () => import(/* webpackChunkName: "video" */ '../views/GPTView.vue')
+      },
+      {
         path: 'help',
         name: 'help',
         component: () => import(/* webpackChunkName: "help" */ '../views/HelpView.vue')
@@ -48,6 +53,10 @@ const routes = [
       }
     ]
   },
+  {
+    path: '*',
+    component: () => import(/* webpackChunkName: "about" */ '../views/NotFound.vue')
+  }
 ]
 
 const router = new VueRouter({
