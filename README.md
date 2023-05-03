@@ -27,7 +27,7 @@
 - v2.2版本接入ChatGPT服务，可无需再代理和APIkey（2023.5.1-2023.5.3）
 - v2.3版本优化ChatGPT服务，使输出的代码高亮，并检测自动换行（后续安排）
 
-## ➰ 效果图
+## ➰ 效果图片
 - ### 爱心跳动
 ![image](https://user-images.githubusercontent.com/94435057/235587606-f84bdbcc-b67b-4790-93cc-c91d77ec9b6c.png)
 
