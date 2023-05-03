@@ -27,6 +27,30 @@
 - v2.2版本接入ChatGPT服务，可无需再代理和APIkey（2023.5.1-2023.5.3）
 - v2.3版本优化ChatGPT服务，使输出的代码高亮，并检测自动换行（后续安排）
 
+## ➰ 效果图
+- ### 爱心跳动
+![image](https://user-images.githubusercontent.com/94435057/235587606-f84bdbcc-b67b-4790-93cc-c91d77ec9b6c.png)
+
+- ### 音乐页面
+![image](https://user-images.githubusercontent.com/94435057/235587997-5aba1a18-971d-4877-8cfe-ee2b468933b1.png)
+![image](https://user-images.githubusercontent.com/94435057/235588140-a94fbd95-8a50-490b-81b1-8b09eda44490.png)
+![image](https://user-images.githubusercontent.com/94435057/235588265-f59b1892-22a0-43d5-bebf-b0f17ad4b31e.png)
+
+
+- ### 观看页面
+![image](https://user-images.githubusercontent.com/94435057/235588373-daabfe47-1598-4d7b-b601-59b91e1289a1.png)
+![image](https://user-images.githubusercontent.com/94435057/235588574-5a6489f8-21ba-4cad-afbc-6874f7d3d136.png)
+![image](https://user-images.githubusercontent.com/94435057/235588619-e760c618-958d-4415-98af-dd9b5b1c01e3.png)
+
+
+- ### 降重页面
+![image](https://user-images.githubusercontent.com/94435057/235587953-7f943f16-f127-4537-85fb-1a3e5c687d14.png)
+
+
+- ### ChatGPT页面
+![99152c731e268c9cf037f245cd8b3fd](https://user-images.githubusercontent.com/94435057/235587854-863caaee-f085-4a07-953e-3fcfa16549bc.jpg)
+
+
 ## 🖋 参与贡献
 
 <a href="https://github.com/P1Kaj1uu/VIP-Video-Parsing/graphs/contributors">  <img src="https://contrib.rocks/image?repo=P1Kaj1uu/VIP-Video-Parsing" /></a>
