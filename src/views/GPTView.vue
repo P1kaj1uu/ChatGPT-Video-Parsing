@@ -313,7 +313,7 @@ export default {
         content.scrollTop = content.scrollHeight
       })
     },
-    sendMessage () {
+    async sendMessage () {
       if (this.gptValue.trim().length === 0) {
         this.gptValue = ''
         this.focusInput()
@@ -326,6 +326,45 @@ export default {
       this.toBottom()
       document.querySelector('.loadEffect').style.display = 'block'
       this.flag = true
+      const response = await fetch(`GPT.URL`, {
+        method: 'POST',
+        headers: {
+          'content-type':'application/json'
+        },
+        body:JSON.stringify({
+        frequency_penalty: 0,
+        max_tokens: 1000,
+        messages: [
+          {
+            role: 'user',
+            content: this.gptValue
+          }
+        ],
+        model: 'gpt-3.5-turbo',
+        n: 1,
+        presence_penalty: 0,
+        stop: '',
+        stream: true,
+        temperature: 1,
+        top_p: 1
+      })
+      });
+      const reader = response.body.getReader();
+      while (true) {
+        const { value, done } = await reader.read();
+        const utf8Decoder = new TextDecoder('utf-8');
+        let data = value ? utf8Decoder.decode(value, { stream: true }) : '';
+        try {
+          data = JSON.parse(data.replace("data: ", ""))
+          console.log(data);
+        } catch (e) {
+          console.log(e);
+        }
+        if (done) {
+          break;
+        }
+      }
+
       // 此处填入GPT3.5模型的接口
       axios.post('GPT.URL', {
         frequency_penalty: 0,
@@ -344,6 +383,7 @@ export default {
         temperature: 1,
         top_p: 1
       }).then(res => {
+        console.log(res);
         let dataArray = res.data.split('\n')
         let gptRes = ''
         // GPT响应时间
