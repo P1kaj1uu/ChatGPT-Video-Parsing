@@ -9,81 +9,9 @@ export const getData = () => {
 	
     var data = [
       {
-				name: "超级万能接口（首推-超推荐可用）",
-				url: "https://jx.jsonplayer.com/player/?url="
-      },
-			{
-				name: "万能接口（超推荐可用）",
-				url: "http://www.sfsft.com/admin.php?url="
-      },
-      {
-				name: "B站备用接口（推荐可用）",
-				url: "https://okjx.cc/?url="
-			},
-      {
-				name: "万能备用接口（推荐可用）",
-				url: "https://jx.playerjy.com/?url="
-			},
-      {
-				name: "万能备用接口（推荐可用）",
-				url: "https://jx.aidouer.net/?url="
-      },
-      {
-				name: "万能备用接口（推荐可用）",
-				url: "https://www.8090g.cn/?url="
-			},
-      {
-				name: "纯净接口（推荐可用）",
-				url: "https://z1.m1907.top/?jx="
-      },
-      {
-				name: "优酷超清接口（推荐可用）",
-				url: "http://www.82190555.com/index/qqvod.php?url="
-      },
-      {
-				name: "爱奇艺接口（推荐可用）",
-				url: "https://api.qianqi.net/vip/?url="
-			},
-			{
-				name: "其它接口（推荐可用）",
-				url: "https://jx.dj6u.com/?url="
-      },
-			{
-				name: "其它备用接口（推荐可用）",
-				url: "https://www.ckmov.vip/api.php?url="
-			},
-			{
-				name: "其它备用接口（推荐可用）",
-				url: "https://www.h8jx.com/jiexi.php?url="
-			},
-			{
-				name: "其它备用接口（推荐可用）",
-				url: "https://go.yh0523.cn/y.cy?url="
-			},
-			{
-				name: "其它备用接口（推荐可用）",
-				url: "https://www.1717yun.com/jx/ty.php?url="
-			},
-			{
-				name: "爱奇艺超清接口3",
-				url: "https://api.flvsp.com/?url="
-			},
-			{
-				name: "芒果TV超清接口",
-				url: "http://api.xfsub.com/index.php?url="
-			},
-			{
-				name: "芒果TV手机接口",
-				url: "http://65yw.2m.vc/chaojikan.php?url="
-			},
-			{
-				name: "搜狐视频接口",
-				url: "http://vip.jlsprh.com/index.php?url="
-			},
-			{
-				name: "乐视视频接口",
-				url: "http://2gty.com/apiurl/yun.php?url="
-			},
+        name: '视频解析接口不对外开放',
+        url: '******'
+      }
 		];
 	
 		for (let i in data) {
