@@ -98,6 +98,11 @@
             src="@/assets/images/home/wx.jpg"
           />
         </div>
+        <div style="text-align: center">
+          <a href="https://github.com/P1kaj1uu/VIP-Video-Parsing" style="font-size: 12px;" target="_blank">
+            点击此处前往该项目的Github仓库（希望您可以给一个小小的star！）
+          </a>
+        </div>
       </div>
     </el-dialog>
   </el-container>

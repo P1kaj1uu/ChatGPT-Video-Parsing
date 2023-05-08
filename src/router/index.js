@@ -19,37 +19,37 @@ const routes = [
     path: '/home',
     name: 'home',
     redirect: '/home/music',
-    component: () => import(/* webpackChunkName: "home" */ '../views/HomeView.vue'),
+    component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
     children: [
       {
         path: 'music',
-        name: 'welcome',
-        component: () => import(/* webpackChunkName: "welcome" */ '../views/WelcomeView.vue')
+        name: 'music',
+        component: () => import(/* webpackChunkName: "music" */ '../views/Music.vue')
       },
       {
         path: 'video',
         name: 'video',
-        component: () => import(/* webpackChunkName: "video" */ '../views/VideoView.vue')
+        component: () => import(/* webpackChunkName: "video" */ '../views/Video.vue')
       },
       {
         path: 'trans',
         name: 'trans',
-        component: () => import(/* webpackChunkName: "video" */ '../views/TransView.vue')
+        component: () => import(/* webpackChunkName: "trans" */ '../views/Trans.vue')
       },
       {
         path: 'chatgpt',
         name: 'chatgpt',
-        component: () => import(/* webpackChunkName: "video" */ '../views/GPTView.vue')
+        component: () => import(/* webpackChunkName: "chatgpt" */ '../views/GPT.vue')
       },
       {
         path: 'help',
         name: 'help',
-        component: () => import(/* webpackChunkName: "help" */ '../views/HelpView.vue')
+        component: () => import(/* webpackChunkName: "help" */ '../views/Help.vue')
       },
       {
         path: 'about',
         name: 'about',
-        component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
       }
     ]
   },
