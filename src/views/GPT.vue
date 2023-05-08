@@ -145,36 +145,6 @@ export default {
       document.querySelector('.loadEffect').style.display = 'block'
       document.querySelector('.loader').style.visibility = 'visible'
       this.flag = true
-      const response = await fetch(`https://mychat.freechatgpt.cc/v1/chat/completions`, {
-        method: 'POST',
-        headers: {
-          'content-type':'application/json'
-        },
-        body:JSON.stringify({
-        frequency_penalty: 0,
-        max_tokens: 1000,
-        messages: [
-          {
-            role: 'user',
-            content: this.gptValue
-          }
-        ],
-        model: 'gpt-3.5-turbo',
-        n: 1,
-        presence_penalty: 0,
-        stop: '',
-        stream: true,
-        temperature: 1,
-        top_p: 1
-      })
-      })
-      console.log(response);
-      resolveStreamResponse(response,
-        () => { },
-        () => { },
-        () => { }
-      )
-
       // 支持上下文对话
       let messageList = this.gptNum >= 1 ? [...this.messageGPTList, { role: 'user', content: this.gptValue }] : [{ role: 'user', content: this.gptValue }]
       // 此处填入GPT3.5模型的接口
