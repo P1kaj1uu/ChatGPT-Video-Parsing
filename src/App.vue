@@ -99,6 +99,8 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-
+<style lang="less">
+.hljs{
+  padding: 10px;
+}
 </style>

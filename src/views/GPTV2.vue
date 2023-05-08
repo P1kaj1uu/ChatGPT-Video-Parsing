@@ -1,6 +1,9 @@
 <script>
 import { defineComponent } from 'vue';
 import resolveStreamResponse from '../utils/resolveStreamResponse'
+import MarkdownIt from 'markdown-it'
+import hljs from 'highlight.js';
+import 'highlight.js/styles/github.css';
 
 const initSession = [
   {
@@ -32,7 +35,7 @@ export default defineComponent({
       }
     },
     async getGPTResponse(content) {
-      const fetchPromise = fetch(`GPT`, {
+      const fetchPromise = fetch(`https://mychat.freechatgpt.cc/v1/chat/completions`, {
         method: 'POST',
         headers: {
           'content-type':'application/json'
@@ -73,6 +76,24 @@ export default defineComponent({
     },
     getSessionCache() {
       return JSON.parse(localStorage.getItem('session_cached'))
+    },
+    markdown(content) {
+      const md = new MarkdownIt({
+        highlight: function (str, lang) {
+          if (lang && hljs.getLanguage(lang))
+          {
+            try
+            {
+              return '<pre class="hljs"><code>' +
+                hljs.highlight(lang, str, true).value +
+                '</code></pre>';
+            } catch (__) { }
+          }
+          return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
+        }
+      });
+      const result = md.render(content)
+      return result
     }
   }
 })
@@ -83,9 +104,9 @@ export default defineComponent({
     <div class="chat-container">
       <div class="message" v-for="item,index in messages" :key="index">
         <div class="me chat" v-if="item.role === 'user'">
-          <div>{{ item.content }}</div>
+          <div v-html="markdown(item.content)"></div>
         </div>
-        <div class="ai chat" v-else>{{ item.content }}</div>
+        <div class="ai chat" v-else v-html="markdown(item.content)"></div>
       </div>
     </div>
     <div class="input-container">
@@ -97,7 +118,14 @@ export default defineComponent({
 </template>
 
 <style>
+.container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 .chat-container{
+  flex: 1;
+  overflow: auto;
   display: flex;
   flex-direction: column;
 }
