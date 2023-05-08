@@ -54,6 +54,10 @@
             <i class="el-icon-s-promotion"></i>
             <span slot="title">GPT</span>
           </el-menu-item>
+          <el-menu-item index="4" :index="'/home/chatgptv2'">
+            <i class="el-icon-s-promotion"></i>
+            <span slot="title">GPTv2</span>
+          </el-menu-item>
           <el-menu-item index="5" :index="'/home/help'">
             <i class="el-icon-question"></i>
             <span slot="title">帮助</span>

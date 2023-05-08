@@ -145,7 +145,7 @@ export default {
       document.querySelector('.loadEffect').style.display = 'block'
       document.querySelector('.loader').style.visibility = 'visible'
       this.flag = true
-      const response = await fetch(`GPT.URL`, {
+      const response = await fetch(`https://mychat.freechatgpt.cc/v1/chat/completions`, {
         method: 'POST',
         headers: {
           'content-type':'application/json'
@@ -167,22 +167,13 @@ export default {
         temperature: 1,
         top_p: 1
       })
-      });
-      const reader = response.body.getReader();
-      while (true) {
-        const { value, done } = await reader.read();
-        const utf8Decoder = new TextDecoder('utf-8');
-        let data = value ? utf8Decoder.decode(value, { stream: true }) : '';
-        try {
-          data = JSON.parse(data.replace("data: ", ""))
-          console.log(data);
-        } catch (e) {
-          console.log(e);
-        }
-        if (done) {
-          break;
-        }
-      }
+      })
+      console.log(response);
+      resolveStreamResponse(response,
+        () => { },
+        () => { },
+        () => { }
+      )
 
       // 支持上下文对话
       let messageList = this.gptNum >= 1 ? [...this.messageGPTList, { role: 'user', content: this.gptValue }] : [{ role: 'user', content: this.gptValue }]
@@ -199,7 +190,6 @@ export default {
         temperature: 1,
         top_p: 1
       }).then(res => {
-        console.log(res);
         let dataArray = res.data.split('\n')
         let gptRes = ''
         // GPT响应时间
