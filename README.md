@@ -32,7 +32,11 @@
 - v2.6版本整体优化代码，抽离封装部分函数和组件，降低复杂度，实现高内聚低耦合（边开发边优化中）
 - v2.7版本接入文心一言服务，增加输出内容的语音朗读功能（后续安排）
 
-## ➰ 效果图片
+
+## 🔰 项目亮点
+
+
+## ➰ 效果展示
 - ### 爱心跳动
 ![image](https://user-images.githubusercontent.com/94435057/235587606-f84bdbcc-b67b-4790-93cc-c91d77ec9b6c.png)
 
@@ -54,6 +58,13 @@
 
 - ### ChatGPT页面
 ![image](https://github.com/P1kaj1uu/VIP-Video-Parsing/assets/94435057/1f9762b3-e1dd-4fa8-bf0f-1b7b45e1d9a0)
+
+
+## ⚡ 网站性能
+![image](https://github.com/P1kaj1uu/VIP-Video-Parsing/assets/94435057/8bf28d51-e295-4eb7-bf81-d89ba65d2527)
+![image](https://github.com/P1kaj1uu/VIP-Video-Parsing/assets/94435057/f0300dc2-945c-4f49-8b62-083dd3d5911b)
+![image](https://github.com/P1kaj1uu/VIP-Video-Parsing/assets/94435057/f8ff05cf-c2f8-4967-a5f5-2975b2d729c0)
+
 
 
 ## 🖋 参与贡献
