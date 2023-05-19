@@ -30,12 +30,14 @@
 - v2.4版本代仓本地的部分接口隐藏不对外开放（2023.5.7晚上）
 - v2.5版本输出代码高亮显示，流式处理EventStream，并支持会话存储（2023.5.13-2023.5.14）
 - v2.6版本接入文心一言基础服务，增加语音聊天、语音朗读功能（后续安排）
-- v2.7版本整体优化代码，修复bug，并抽离封装部分函数和组件，降低复杂度，实现高内聚低耦合（进行中）
+- v2.7版本前端也做限流处理，增加验证功能，防止接口被恶意多次请求（后续安排）
+- v2.8版本整体优化代码，修复bug，并抽离封装部分函数和组件，降低复杂度，实现高内聚低耦合（进行中）
+- v3.0版本性能优化，项目重构，全新版本上线（待定安排中）
 
 
 ## 🔰 项目概述
 ✅ 技术栈
-- 前端：Vue2，Vuex，JQuery，Three.js，axios，fetch，路由前置全局守卫，MD5加密，Markdown语法解析，highlight代码高亮显示，处理EventStream流，PC端屏幕适配，组件库使用ElementUI和Layui
+- 前端：Vue2，Vuex，JQuery，Three.js，axios，fetch，路由前置全局守卫，MD5加密，验证码，Markdown语法解析，highlight代码高亮显示，处理EventStream流，PC端屏幕适配，组件库使用ElementUI和Layui
 - 后端：Java，开发框架SpringBoot，数据库MySQL，中间件Redis，第三方API接入Openai-ChatGPT，核心技术包含拦截器、过滤器、本地缓存Caffeine LoadingCache、算法（双端队列 + 滑动窗口 + 轮询负载均衡等）、Stream流、全局异常处理器、定时任务、锁机制、Swagger
 - 部署：Nginx，服务器开代理模式
 
