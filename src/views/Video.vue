@@ -172,18 +172,27 @@
 </template>
 
 <script>
+import { sleep } from '@/utils/sleep'
 // 导入视频解析的接口获取数据
-import { getData } from '@/api/request';
+import { getData } from '@/api/request'
 
 export default {
-	name: 'VideoView',
-	created () {
-		this.$notify.info({
-          	title: '系统消息',
-          	message: '如遇视频解析时间过长，若不想等待，可重新选择解析接口，重新解析视频！',
-		  	offset: 50,
-			duration: 2500
-        });
+  name: 'VideoView',
+  created () {
+    let isDisPlay = document.querySelector('.model')?.style.display === 'none'
+    let notifyMessage = {
+                          title: '系统消息',
+                          message: '如遇视频解析时间过长，若不想等待，可重新选择解析接口，重新解析视频！',
+		                      offset: 0,
+			                    duration: 2500
+                        }
+    if (isDisPlay) {
+      this.$notify.info(notifyMessage)
+    } else {
+      sleep(6000).then(() => {
+        this.$notify.info(notifyMessage)
+      })
+    }
 		// 将回调延迟到下次DOM更新循环之后执行，避免下拉框没显示出来
 		this.$nextTick(() => {
 			getData()

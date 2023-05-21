@@ -90,6 +90,8 @@
       </div>
     </div>
 
+    <VuePuzzleVcode :show="isShowVerify" @success="successVerify" @close="this.isShowVerify = false" />
+
     <div class="loadEffect">
       <span></span>
       <span></span>
@@ -104,7 +106,9 @@
 </template>
 
 <script>
+import VuePuzzleVcode from 'vue-puzzle-vcode'
 import Role from '@/components/Role'
+import { sleep } from '@/utils/sleep'
 import { resolveStreamResponse } from '@/utils/resolveStreamResponse'
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
@@ -127,6 +131,8 @@ export default {
     return {
       gptValue: '',
       messages: this.getSessionCache() ? this.getSessionCache() : initSession,
+      times: 0,
+      isShowVerify: false,
       backupMessage: [
         {
           role: 'user',
@@ -140,7 +146,8 @@ export default {
     }
   },
   components: {
-    Role
+    Role,
+    VuePuzzleVcode
   },
   methods: {
     handleSend () {
@@ -150,10 +157,17 @@ export default {
         this.$message.warning('发送的消息不能为空哦~')
         return
       }
+      ++this.times
+      if (localStorage.getItem('session_times') >= 12) {
+        this.$message.warning('系统检测到当前环境异常，请先验证！')
+        this.isShowVerify = true
+        return
+      }
       this.messages.push({
         role: 'user',
         content: this.gptValue.trim()
       })
+      localStorage.setItem('session_times', this.times)
       this.toMessageBottom()
       document.querySelector('.sendImg').disabled = true
       document.querySelector('.clears').disabled = true
@@ -162,6 +176,12 @@ export default {
       this.getGPTResponse(this.gptValue)
       this.gptValue = ''
       this.$refs.roleRef.clearSelect()
+    },
+    // 验证码校验通过
+    successVerify () {
+      this.isShowVerify = false
+      this.times = 0
+      localStorage.setItem('session_times', this.times)
     },
     onKeyDown (event) {
       if (event.key === 'Escape') {
@@ -357,6 +377,22 @@ export default {
       this.$nextTick(() => {
         const content = document.querySelector('.chat-content')
         content.scrollTop = content.scrollHeight
+      })
+    }
+  },
+  mounted () {
+    let isDisPlay = document.querySelector('.model')?.style.display === 'none'
+    let notifyMessage = {
+                          title: '系统消息',
+                          message: '我的APIKey配额有限，希望大家能省点用谢谢！',
+		                      offset: 0,
+			                    duration: 2500
+                        }
+    if (isDisPlay) {
+      this.$notify.info(notifyMessage)
+    } else {
+      sleep(6000).then(() => {
+        this.$notify.info(notifyMessage)
       })
     }
   },
