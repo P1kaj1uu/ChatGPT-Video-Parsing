@@ -31,7 +31,14 @@
             <ul class="song_list">
               <li v-for="item in musicList">
                 <a href="javascript:;" @click="playMusic(item.id)"></a>
-                <b v-cloak :class="[item.id === ids ? 'activeName' : '']">{{ item.name }}</b>
+                <el-tooltip
+                  class="item"
+                  effect="dark"
+                  :content="item.artists[0].name"
+                  placement="right"
+                >
+                  <b @click="playMusic(item.id)" style="cursor: pointer;" v-cloak :class="[item.id === ids ? 'activeName' : '']">{{ item.name }}</b>
+                </el-tooltip>
                 <span v-if="item.mvid != 0" @click="playMV(item.mvid)"
                   ><i></i
                 ></span>
@@ -127,17 +134,26 @@ export default {
         that.query = ''
         return
       }
+      const loading = that.$loading({
+        lock: true,
+        text: '正在拼命搜索加载中...',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.7)'
+      })
       axios.get('https://autumnfish.cn/search?keywords=' + this.query).then(
         function (response) {
           console.log(response)
           if (JSON.stringify(response.data.result).length === 2) {
+            loading.close()
             that.$message('当前搜索结果为空，请换一个想听的歌曲或歌手，谢谢！')
           } else {
             that.musicList = response.data.result.songs
+            loading.close()
           }
         },
         function (err) {}
       ).catch(error => {
+        loading.close()
         that.$message('接口出错啦，请刷新页面重试！')
       })
     },

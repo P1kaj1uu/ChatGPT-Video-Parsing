@@ -27,7 +27,8 @@ import {
     Notification,
     Message,
     MessageBox,
-    Tooltip
+    Tooltip,
+    Loading 
   } from 'element-ui'
   
   Vue.use(Button)
@@ -56,3 +57,4 @@ import {
   Vue.prototype.$message = Message
   Vue.prototype.$msgbox = MessageBox
   Vue.prototype.$confirm = MessageBox.confirm
+  Vue.prototype.$loading = Loading.service

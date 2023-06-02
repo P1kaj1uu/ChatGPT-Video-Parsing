@@ -7,7 +7,8 @@
     <!-- 头部区域 -->
     <el-header>
       <div>
-        <h3 style="user-select: none; cursor: pointer">VIP视频在线解析</h3>
+        <img src="@/assets/images/home/logo.png" class="webLogo" alt="logo">
+        <h3 style="user-select: none; cursor: pointer">ChattyPlay</h3>
       </div>
       <a href="#" class="button button--bird" @click="ContactMeFn">
         <div class="button__wrapper">
@@ -70,11 +71,17 @@
           <!-- 路由占位符 -->
           <router-view></router-view>
         </el-main>
-        <el-footer v-show="$route.path === '/home/welcome'">
-          <div>
-            声明：本站只提供影视解析服务，请勿用于任何商业用途。如有侵权，请联系我！
+        <el-footer style="font-family: 'Long Cang',cursive;" v-show="$route.path === '/' || $route.path === '/home/music'">
+          <div style="display: flex; justify-content: center;">
+            <div>[ 来日方长</div>
+            <div class="animated-icon">💗</div>
+            <div>未来可期 ]</div>
           </div>
-          <div>联系方式：Dveiklokk（微信号）</div>
+          <div>
+            <span id="busuanzi_container_site_pv" style="color: #f2ffff;">
+              您是第&nbsp;<span id="busuanzi_value_site_pv">***</span>&nbsp;位访问本网站的友友~
+            </span>
+          </div>
           <div>© Copyright 2023 P1Kaj1uu. All Rights Reserved.</div>
         </el-footer>
       </el-container>
@@ -169,7 +176,7 @@ export default {
     align-items: center;
 
     h3 {
-      margin-left: 25px;
+      margin-left: 10px;
     }
   }
 }
@@ -219,6 +226,44 @@ export default {
   text-align: center;
   letter-spacing: 0.2em;
   cursor: pointer;
+}
+
+.animated-icon {
+  margin: 0px 7px;
+  animation: iconAnimate 1.35s ease-in-out infinite;
+}
+
+@keyframes iconAnimate {
+  0%, 100% {
+    transform: scale(1);
+  }
+  10%, 30% {
+    transform: scale(.9);
+  }
+  20%, 40%, 50%, 60%, 70%, 80% {
+    transform: scale(1.1);
+  }
+}
+
+.webLogo {
+  margin-left: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+
+@keyframes logoAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.webLogo:hover {
+  animation: logoAnimation 1.5s linear infinite;
 }
 
 .button--bird {

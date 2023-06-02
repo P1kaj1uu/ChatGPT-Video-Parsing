@@ -21,6 +21,14 @@
           <!-- 用户 -->
           <template v-if="item.role === 'user'">
             <div class="me chat">
+              <el-tooltip
+                class="item"
+                effect="dark"
+                content="复制发送的内容"
+                placement="top"
+              >
+                <img src="@/assets/images/gpt/copy.png" @click="copySendText" class="copySendImg" alt="复制">
+              </el-tooltip>
               <div v-html="markdown(item.content)"></div>
             </div>
             <div class="infoMe-time">
@@ -34,7 +42,7 @@
             <el-tooltip
               class="item"
               effect="dark"
-              content="复制该内容"
+              content="复制该响应的内容"
               placement="top"
             >
               <img src="@/assets/images/gpt/copy.png" @click="copy" class="copyImg" alt="复制">
@@ -42,7 +50,7 @@
             <el-tooltip
               class="item"
               effect="dark"
-              content="播放该内容"
+              content="播放该响应的内容"
               placement="top"
             >
               <img src="@/assets/images/gpt/trumpet.png" @click="playSoundFn" class="trumpetImg" alt="播放">
@@ -233,7 +241,7 @@ export default {
           message.content += data.choices.map((_) => _.delta.content).join('')
         },
         (err) => {
-          message.content += "宝，我出错啦，这个问题我也不知道该怎么回答你呢，要不你慢一点，容我再想一想~（建议：清空会话记录试试..."
+          message.content += '宝，我出错啦，这个问题我也不知道该怎么回答你呢，要不你慢一点，容我再想一想~（建议：清空会话记录试试...'
           this.$message.error('出错啦~建议刷新页面后，再重新尝试')
           console.log('错误！', err)
         },
@@ -290,7 +298,7 @@ export default {
             } catch (__) {}
           }
           return (
-            '<pre class="hljs"><code>' +
+            '<pre class="hljs"><button class="CodesBlock" @click="copyCodeBlock">复制代码</button><code>' +
             md.utils.escapeHtml(str) +
             '</code></pre>'
           )
@@ -323,7 +331,20 @@ export default {
       document.execCommand('copy')
       // 删除隐藏的 <textarea> 元素
       document.body.removeChild(textarea)
-      this.$message.success('复制成功')
+      this.$message.success('复制结果成功')
+    },
+    // 复制发送的内容
+    copySendText (e) {
+      const input = e.target.parentNode.querySelectorAll('p')
+      const textarea = document.createElement('textarea')
+      input.forEach(item => {
+        textarea.value += item.innerText || item.textContent
+      })
+      document.body.appendChild(textarea)
+      textarea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textarea)
+      this.$message.success('复制对话成功')
     },
     // 复制代码
     copyCodeBlock (e) {
@@ -458,6 +479,7 @@ export default {
   position: relative;
 }
 .me {
+  position: relative;
   padding: 10px;
   border-radius: 20px 20px 5px 20px;
   background-color: #95ec69;
@@ -547,6 +569,16 @@ export default {
   position: absolute;
   top: 15px;
   left: 70px;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+
+.copySendImg {
+  position: absolute;
+  left: -35px;
+  top: 50%;
+  transform: translateY(-50%);
   cursor: pointer;
   width: 25px;
   height: 25px;
