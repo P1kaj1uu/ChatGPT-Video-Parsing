@@ -61,6 +61,9 @@
 
 
 ## ➰ 效果展示
+- ### 登录页面
+![image](https://github.com/P1kaj1uu/VIP-Video-Parsing/assets/94435057/9a994b55-b7af-4ee2-98b1-7ec3844be75b)
+
 - ### 爱心跳动
 ![image](https://user-images.githubusercontent.com/94435057/235587606-f84bdbcc-b67b-4790-93cc-c91d77ec9b6c.png)
 
