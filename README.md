@@ -121,7 +121,7 @@
 
 联系我：
 
-<img src="http://121.36.82.52:9200/img/wx.e958441d.jpg" width="30%" height="30%">
+<img src="http://121.36.82.52:9200/img/wx.3e24f0f7.jpg" width="30%" height="30%">
 
 WeChat Pay：
 
