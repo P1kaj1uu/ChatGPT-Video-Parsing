@@ -128,96 +128,83 @@ export default {
   methods: {
     // 歌曲搜索
     searchMusic: function () {
-      var that = this
-      if (that.query.trim().length === 0) {
-        that.$message('请先输入想听的歌曲或歌手')
-        that.query = ''
+      if (this.query.trim().length === 0) {
+        this.$message('请先输入想听的歌曲或歌手')
+        this.query = ''
         return
       }
-      const loading = that.$loading({
+      const loading = this.$loading({
         lock: true,
         text: '正在拼命搜索加载中...',
         spinner: 'el-icon-loading',
         background: 'rgba(0, 0, 0, 0.7)'
       })
-      axios.get('https://autumnfish.cn/search?keywords=' + this.query).then(
-        function (response) {
-          console.log(response)
-          if (JSON.stringify(response.data.result).length === 2) {
+      axios.get('https://autumnfish.cn/search?keywords=' + this.query)
+        .then(res => {
+          if (JSON.stringify(res.data.result).length === 2) {
             loading.close()
-            that.$message('当前搜索结果为空，请换一个想听的歌曲或歌手，谢谢！')
+            this.$message('当前搜索结果为空，请换一个想听的歌曲或歌手，谢谢！')
           } else {
-            that.musicList = response.data.result.songs
+            this.musicList = res.data.result.songs
             loading.close()
           }
-        },
-        function (err) {}
-      ).catch(error => {
-        loading.close()
-        that.$message('接口出错啦，请刷新页面重试！')
+        })
+        .catch(error => {
+          loading.close()
+          this.$message('接口出错啦，请刷新页面重试！')
       })
     },
     // 歌曲播放
     playMusic: function (musicId) {
-      var that = this
-      that.ids = musicId
+      this.ids = musicId
       // 获取歌曲地址
-      axios.get('https://autumnfish.cn/song/url?id=' + musicId).then(
-        function (response) {
-          console.log(response.data.data[0].url)
-          that.musicUrl = response.data.data[0].url
-        },
-        function (err) {}
-      ).catch(error => {
-        that.$message('接口出错啦，请刷新页面重试！')
+      axios.get('https://autumnfish.cn/song/url?id=' + musicId)
+        .then(res => {
+          this.musicUrl = res.data.data[0].url
+        })
+        .catch(error => {
+          this.$message('接口出错啦，请刷新页面重试！')
       })
 
       // 歌曲详情获取
-      axios.get('https://autumnfish.cn/song/detail?ids=' + musicId).then(
-        function (response) {
-          console.log(response.data.songs[0].al.picUrl)
-          that.musicCover = response.data.songs[0].al.picUrl
-        },
-        function (err) {}
-      ).catch(error => {
-        that.$message('接口出错啦，请刷新页面重试！')
+      axios.get('https://autumnfish.cn/song/detail?ids=' + musicId)
+        .then(res => {
+          this.musicCover = res.data.songs[0].al.picUrl
+        })
+        .catch(error => {
+          this.$message('接口出错啦，请刷新页面重试！')
       })
 
       // 歌曲评论获取
-      axios.get('https://autumnfish.cn/comment/hot?type=0&id=' + musicId).then(
-        function (response) {
-          console.log(response)
-          that.hotComments = response.data.hotComments
-        },
-        function (err) {}
-      ).catch(error => {
-        that.$message('接口出错啦，请刷新页面重试！')
+      axios.get('https://autumnfish.cn/comment/hot?type=0&id=' + musicId)
+        .then(res => {
+          this.hotComments = res.data.hotComments
+        })
+        .catch(error => {
+          this.$message('接口出错啦，请刷新页面重试！')
       })
     },
     // 歌曲播放
-    play: function () {
+    play () {
       this.isPlaying = true
     },
     // 歌曲暂停
-    pause: function () {
+    pause () {
       this.isPlaying = false
     },
     // 播放mv
-    playMV: function (mvid) {
-      var that = this
-      axios.get('https://autumnfish.cn/mv/url?id=' + mvid).then(
-        function (response) {
-          console.log(response.data.data.url)
-          that.isShow = true
-          that.mvUrl = response.data.data.url
-        },
-        function (err) {}
-      ).catch(error => {
-        that.$message('接口出错啦，请刷新页面重试！')
+    playMV (mvid) {
+      axios.get('https://autumnfish.cn/mv/url?id=' + mvid)
+        .then(res => {
+          this.isShow = true
+          this.mvUrl = res.data.data.url
+        })
+        .catch(error => {
+          this.$message('接口出错啦，请刷新页面重试！')
       })
     },
     // 隐藏遮盖层
-    hide: function () {
+    hide () {
       this.mvUrl = ''
       this.isShow = false
     }

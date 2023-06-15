@@ -412,7 +412,7 @@ export default {
     if (isDisPlay) {
       this.$notify.info(notifyMessage)
     } else {
-      sleep(6000).then(() => {
+      sleep(500).then(() => {
         this.$notify.info(notifyMessage)
       })
     }

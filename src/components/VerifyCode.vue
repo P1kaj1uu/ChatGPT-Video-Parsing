@@ -4,6 +4,7 @@
       id="s-canvas"
       :width="contentWidth"
       :height="contentHeight"
+      ref="canvasRef"
     ></canvas>
   </div>
 </template>
@@ -11,6 +12,11 @@
 <script>
 export default {
   name: 'VerifyCode',
+  data () {
+    return {
+      SIdentify: this.identifyCode
+    }
+  },
   props: {
     identifyCode: {
       // 默认
@@ -55,7 +61,7 @@ export default {
     contentHeight: {
       // 容器高度
       type: Number,
-      default: 48
+      default: 40
     }
   },
   methods: {
@@ -81,8 +87,8 @@ export default {
       )
       ctx.fillRect(0, 0, this.contentWidth, this.contentHeight)
       // 绘制文字
-      for (let i = 0; i < this.identifyCode.length; i++) {
-        this.drawText(ctx, this.identifyCode[i], i)
+      for (let i = 0; i < this.SIdentify.length; i++) {
+        this.drawText(ctx, this.SIdentify[i], i)
       }
       this.drawLine(ctx)
       this.drawDot(ctx)
@@ -91,7 +97,7 @@ export default {
       ctx.fillStyle = this.randomColor(50, 160) // 随机生成字体颜色
       ctx.font =
         this.randomNum(this.fontSizeMin, this.fontSizeMax) + 'px SimHei' // 随机生成字体大小
-      let x = (i + 1) * (this.contentWidth / (this.identifyCode.length + 1))
+      let x = (i + 1) * (this.contentWidth / (this.SIdentify.length + 1))
       let y = this.randomNum(this.fontSizeMax, this.contentHeight - 5)
       var deg = this.randomNum(-30, 30)
       // 修改坐标原点和旋转角度
@@ -135,11 +141,11 @@ export default {
     }
   },
   watch: {
-    identifyCode() {
+    SIdentify () {
       this.drawPic()
     }
   },
-  mounted() {
+  mounted () {
     this.drawPic()
   }
 }

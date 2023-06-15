@@ -7,13 +7,18 @@ NProgress.configure({ showSpinner: false })
 // 导入封装的判断是否为移动端设备的函数
 import { isMobile } from '@/utils/mobileORpc'
 import { myBrowser } from '@/utils/browserType'
+import { getToken } from '@/utils/token'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    redirect: '/home'
+    redirect: '/login'
+  },
+  {
+    path: '/login',
+    component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue')
   },
   {
     path: '/home',

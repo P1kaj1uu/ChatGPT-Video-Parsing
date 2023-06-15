@@ -6,43 +6,12 @@
 </template>
 
 <script>
-import { Heart } from '@/utils/model'
 import { sleep } from '@/utils/sleep'
 
 export default {
   name: 'App',
   created () {
-    (function () {
-      // 在不刷新页面的情况下，只执行一次爱心跳动效果
-      // 加载爱心跳动效果
-      sleep(250).then(async () => {
-        await Heart()
-        // 伪数组
-        let ele = document.querySelectorAll('body canvas')
-        Array.from(ele).forEach((item) => {
-          console.log(item.id)
-          if (item.id !== 'canvas_sakura') {
-            item.style.position = 'absolute'
-            // 全屏显示
-            item.style.top = 0
-            item.style.left = 0
-            item.style.zIndex = 1
-            // 动态添加类名，方便后面移除
-            item.classList.add('model')
-          }
-        })
-      })
-      // 移除爱心跳动效果
-      sleep(5800).then(() => {
-        let element = document.querySelectorAll('body .model')
-        Array.from(element).forEach((item) => {
-          console.log(item.className)
-          if (item.className === 'model') {
-            item.style.display = 'none'
-          }
-        })
-      })
-    })();
+    console.info("%c欢迎您访问不见水星记的网站，预祝使用愉快！\n\n%c       _oo0oo_\n      o8888888o\n      88\" . \"88\n      (| -_- |)\n      0\\  =  /0\n    ___/‘---’\\___\n  .' \\\\|     |// '.\n / \\\\|||  :  |||// \\\n/ _||||| -:- |||||- \\\n|   | \\\\\\  -  /// |   |\n| \\_|  ''\\---/''  |_/ |\n \\  .-\\__  '-'  ___/-. /\n'-.____'-.____\\<><>/.____.-'\n       '=---='\n\n   佛祖保佑，永无bug！", "font-family: 'Microsoft YaHei'; font-size: 24px; color: #00BFFF; text-shadow: 1px 1px #D3D3D3;", "font-size: 18px;color: green;");
     
     // 核心价值！
     (function () {
