@@ -61,6 +61,10 @@
 
 
 ## ➰ 效果展示
+- ### 检测页面
+![image](https://github.com/P1kaj1uu/VIP-Video-Parsing/assets/94435057/47f44a74-6901-4c0a-bd28-a69ff2423dae)
+
+
 - ### 登录页面
 ![image](https://github.com/P1kaj1uu/VIP-Video-Parsing/assets/94435057/9a994b55-b7af-4ee2-98b1-7ec3844be75b)
 
