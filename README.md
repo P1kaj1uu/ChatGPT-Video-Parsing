@@ -7,7 +7,7 @@
 
 > 项目描述详情信息可跳转WiKi：https://githubfast.com/P1kaj1uu/VIP-Video-Parsing/wiki/%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3
 
-> 移动端适配进度已经完成55%，但可能要搁置一段时间，这段时间要忙其它的事情
+> 移动端适配暂搁
 
 ## 🚀 在线体验
 - 体验地址：<a href="http://121.36.82.52:9200/" target="_blank">个人项目</a>
@@ -33,13 +33,13 @@
 - v2.7版本前端也做限流处理，增加验证功能，防止接口被恶意多次请求（2023.5.24晚上）
 - v2.8版本优化加载效果，增加网站访问次数统计和版本更新提醒用户功能（2023.5.26-2023.5.27）
 - v2.9版本整体优化代码，修复bug，并抽离封装部分函数和组件，降低复杂度，实现高内聚低耦合（2023.6.10-2023.6.20）
-- v3.0全新版本上线，优化markdown代码块格式，并接入文生图、亚马逊爬虫服务，发布浏览器插件（2023.7.24-2023.8.7）
+- v3.0全新版本上线，优化markdown代码块格式，并接入文生图、亚马逊爬虫服务，发布浏览器插件（2023.7.24-2023.8.13）
 
 
 ## 🔰 项目概述
 ✅ 技术栈
 - 前端：Vue2，Vuex，JQuery，Three.js，axios，fetch，路由前置全局守卫，MD5加密，验证码，网站访问次数统计，Markdown语法解析，highlight代码高亮显示，处理EventStream流，PC端屏幕适配，组件库使用ElementUI和Layui
-- 后端：Java，开发框架SpringBoot，数据库MySQL，中间件Redis，第三方API接入Openai-ChatGPT，核心技术包含拦截器、过滤器、本地缓存Caffeine LoadingCache、算法（双端队列 + 滑动窗口 + 轮询负载均衡等）、Stream流、全局异常处理器、定时任务、锁机制、Swagger
+- 后端：Java，开发框架SpringBoot，数据库MySQL，中间件Redis，第三方API接入Openai-ChatGPT，接入文生图模型（MidJourney / Stable Diffusion Model），核心技术包含拦截器、过滤器、本地缓存Caffeine LoadingCache、算法（双端队列 + 滑动窗口 + 轮询负载均衡等）、Stream流、全局异常处理器、定时任务、锁机制、Swagger
 - 部署：Nginx，服务器开代理模式
 
 ✅ 音乐播放
@@ -142,7 +142,7 @@
 
 <br />
 
-联系我：
+联系我（WeChat：Dveiklokk）：
 
 <img src="http://121.36.82.52:9200/img/wx.3e24f0f7.jpg" width="30%" height="30%">
 
